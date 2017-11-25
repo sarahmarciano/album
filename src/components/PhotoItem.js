@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
 const PhotoItem = ({ albumId, id, title, thumbnailUrl, onItemPressed }) => {
     const { viewStyle, leftSideStyle, imageStyle, titleViewStyle, titleStyle, albumIdStyle } = styles;
@@ -20,6 +21,14 @@ const PhotoItem = ({ albumId, id, title, thumbnailUrl, onItemPressed }) => {
             </View>
         </TouchableOpacity>
     );
+};
+
+PhotoItem.propTypes = {
+    albumId: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    thumbnailUrl: PropTypes.string.isRequired,
+    onItemPressed: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, RefreshControl } from 'react-native';
+import PropTypes from 'prop-types';
 
 import PhotoItem from '../containers/PhotoItemContainer';
 
@@ -26,5 +27,13 @@ class List extends Component {
         );
     }
 }
+
+List.propTypes = {
+    ids: PropTypes.array.isRequired,
+    refreshing: PropTypes.bool.isRequired,
+    refreshPhotoList: PropTypes.func.isRequired,
+    onItemPressed: PropTypes.func.isRequired,
+    error: PropTypes.bool.isRequired
+};
 
 export default List;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 class Error extends Component {
     render() {
@@ -15,6 +16,11 @@ class Error extends Component {
         );
     }
 }
+
+Error.propTypes = {
+    error: PropTypes.bool.isRequired,
+    onTryAgainPressed: PropTypes.func.isRequired
+};
 
 const styles = StyleSheet.create({
     viewStyle: {

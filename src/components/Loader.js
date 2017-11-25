@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, ActivityIndicator, Text, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 class Loader extends Component {
     render() {
@@ -13,6 +14,10 @@ class Loader extends Component {
         );
     }
 }
+
+Loader.propTypes = {
+    loading: PropTypes.bool.isRequired
+};
 
 const styles = StyleSheet.create({
     viewStyle: {
