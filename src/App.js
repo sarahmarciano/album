@@ -1,13 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import PhotosList from './containers/PhotosListContainer';
+import Navigator from './navigator';
 import configureStore from './configureStore';
 
 const App = () => {
     return (
         <Provider store={configureStore()}>
-            <PhotosList />
+            <Navigator />
         </Provider>
     );
 };

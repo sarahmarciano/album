@@ -1,7 +1,6 @@
 import {
-    FETCH_PHOTOS_PENDING,
     FETCH_PHOTOS_FULFILLED,
-    FETCH_PHOTOS_FAILED
+    REFRESH_PHOTOS_FULFILLED
 } from './types';
 
 const INITIAL_STATE = {};
@@ -9,10 +8,11 @@ const INITIAL_STATE = {};
 export default (state = INITIAL_STATE, action) => {
     const { payload } = action;
     switch (action.type) {
+        case REFRESH_PHOTOS_FULFILLED:
         case FETCH_PHOTOS_FULFILLED:
             const photos = {};
             payload.data.forEach(photo => photos[photo.id] = photo);
-            return { ...state, ...photos };
+            return photos;
         default:
             return state;
     }

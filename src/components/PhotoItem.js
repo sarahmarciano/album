@@ -1,22 +1,24 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-const PhotoItem = ({ albumId, id, title, thumbnailUrl }) => {
+const PhotoItem = ({ albumId, id, title, thumbnailUrl, onItemPressed }) => {
     const { viewStyle, leftSideStyle, imageStyle, titleViewStyle, titleStyle, albumIdStyle } = styles;
     return (
-        <View style={viewStyle}>
-            <View style={leftSideStyle}>
-                <Image
-                    style={imageStyle}
-                    source={{ uri: thumbnailUrl }}
-                />
-                <View style={titleViewStyle}>
-                    <Text numberOfLines={2} style={titleStyle}>{title}</Text>
-                    <Text>{id}</Text>
+        <TouchableOpacity onPress={onItemPressed}>
+            <View style={viewStyle}>
+                <View style={leftSideStyle}>
+                    <Image
+                        style={imageStyle}
+                        source={{ uri: thumbnailUrl }}
+                    />
+                    <View style={titleViewStyle}>
+                        <Text numberOfLines={2} style={titleStyle}>{title}</Text>
+                        <Text>{id}</Text>
+                    </View>
                 </View>
+                <Text style={albumIdStyle}>{albumId}</Text>
             </View>
-            <Text style={albumIdStyle}>{albumId}</Text>
-        </View>
+        </TouchableOpacity>
     );
 };
 
