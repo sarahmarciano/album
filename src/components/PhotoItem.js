@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-const PhotoItem = ({ albumId, id, title, url }) => {
+const PhotoItem = ({ albumId, id, title, thumbnailUrl }) => {
     const { viewStyle, leftSideStyle, imageStyle, titleViewStyle, titleStyle, albumIdStyle } = styles;
     return (
         <View style={viewStyle}>
             <View style={leftSideStyle}>
                 <Image
                     style={imageStyle}
-                    source={{ uri: url }}
+                    source={{ uri: thumbnailUrl }}
                 />
                 <View style={titleViewStyle}>
                     <Text numberOfLines={2} style={titleStyle}>{title}</Text>
