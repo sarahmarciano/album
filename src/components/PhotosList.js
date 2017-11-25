@@ -15,6 +15,7 @@ class PhotosList extends Component {
                 <FlatList
                     data={ids}
                     renderItem={({ item }) => <PhotoItem id={item} />}
+                    keyExtractor={(item, index) => index}
                 />
             </View>
         );
